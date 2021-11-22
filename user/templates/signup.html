@@ -1,0 +1,93 @@
+{% load static %}
+{% load cssfilters %}
+
+{% load static %}
+{% load cssfilters %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BD AGRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" type='text/css'>
+</head>
+
+<body id="signup" class="bg-dark">
+    <div class="container" style="max-width: 500px">
+        <h2 class="text-center font-weight-bold text-primary">Sign up Form</h2>
+        <div class="card p-3 my-3 border-primary">
+            <form method="post">
+                {% csrf_token %}
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="first_name" class="form-label">First Name</label>
+                        {{form.first_name|addclass:'form-control form-control-sm'}}
+                    </div>
+                    <div class="col">
+                        <label for="last_name" class="form-label">Last Name</label>
+                        {{form.last_name|addclass:'form-control form-control-sm'}}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="username" class="form-label">Username</label>
+                        {{form.username|addclass:'form-control form-control-sm'}}
+                        {% for error in form.username.errors %}
+                        <small style="color: red">{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        {{form.phone|addclass:'form-control form-control-sm'}}
+                        {% for error in form.phone.errors %}
+                        <small style="color: red">{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <label class="form-check-label" for="flexSwitchCheckChecked">I'm an expart</label>
+                    {{form.is_expart|addclass:'form-check-input'}}
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <label for="address" class="form-label">Address</label>
+                        {{form.address|addclass:'form-control form-control-sm'}}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="password1" class="form-label">Password</label>
+                        {{form.password1|addclass:'form-control form-control-sm'}}
+                        {% for error in form.password1.errors %}
+                        <small style="color: red">{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-6">
+                        <label for="password2" class="form-label">Confirm Password</label>
+                        {{form.password2|addclass:'form-control form-control-sm'}}
+                        {% for error in form.password2.errors %}
+                        <small style="color: red">{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <button class="btn btn-primary w-100" type="submit">Sign up</button>
+            </form>
+            <p class="text-center">Already have an account? <a href="{% url 'login'%}">Login</a></p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

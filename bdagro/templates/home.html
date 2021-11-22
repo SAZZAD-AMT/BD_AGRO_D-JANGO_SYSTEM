@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="title ">
+        <h1>BD AGRO</h1>
+        <div class="text-center">
+            <a href="{% url 'login' %}" class="btn sign">Login</a>
+            <a href="{% url 'signup' %}" class="btn sign">Sign Up</a>
+        </div>
+    </div>
+
+{% endblock %}
