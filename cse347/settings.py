@@ -30,7 +30,8 @@ INSTALLED_APPS = [
     
     'bdagro',
     'user',
-    'blog'
+    'blog',
+    'statistic',
 ]
 
 MIDDLEWARE = [

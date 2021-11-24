@@ -8,5 +8,10 @@ urlpatterns = [
     path('accounts/', include('user.urls')),
     path('blog/',  include('blog.urls')),
     path('admin/', admin.site.urls),
-    path('', views.home, name="home")
+    path('', views.home, name="home"),
+    path('statistic/', include('statistic.urls')),
+    path('home/', include('bdagro.urls')),
+    
+    
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
