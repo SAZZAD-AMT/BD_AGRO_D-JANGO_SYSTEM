@@ -1,82 +1,82 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
 }
 
 header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
 }
 
 ul {
-    color: black;
-    float: right;
-    list-style-type: none;
-    margin-top: 25px;
+  color: black;
+  float: right;
+  list-style-type: none;
+  margin-top: 25px;
 }
 
 ul li {
-    display: inline-block;
-    margin: 0 5px;
+  display: inline-block;
+  margin: 0 5px;
 }
 
 ul li a {
-    text-decoration: none;
-    color: #fff;
-    border: 1px solid transparent;
-    transition: 0.6s ease;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid transparent;
+  transition: 0.6s ease;
 }
 
 ul li a:hover {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 ul li.active a {
-    background-color: #ffff;
-    color: #000;
+  background-color: #ffff;
+  color: #000;
 }
 
 #bg {
-    background-repeat: no-repeat;
-    height: 100vh;
-    object-fit: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .logo img {
-    float: left;
-    width: 100px;
+  float: left;
+  width: 100px;
 }
 
 .main {
-    max-width: 1200px;
-    margin: auto;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .title h1 {
-    color: white;
-    font-size: 100px;
+  color: white;
+  font-size: 100px;
 }
 
 .sign {
-    border: 2px solid #ffff;
-    padding: 10px 30px;
-    color: #fff;
-    text-decoration: none;
-    transition: 00.6s ease;
+  border: 2px solid #ffff;
+  padding: 10px 30px;
+  color: #fff;
+  text-decoration: none;
+  transition: 00.6s ease;
 }
 
 .sign:hover {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }

@@ -1,0 +1,28 @@
+{% extends 'base.html '%} {% load widget_tweaks %} {% block content %}
+<div class="container">
+  <div class="text-center m-5">
+    <h1>Create an Insceticides Information Form here</h1>
+  </div>
+
+  <form method="POST">
+    {% csrf_token %} 
+    <small>Project Title</small>
+    {{ form.title|add_class:"form-control mb-3" }}
+
+    <small>Insecticides Description</small>
+    {{ form.description|add_class:"form-control mb-3" }}
+
+    <small>Project Demo Link</small>
+    {{ form.demo_link|add_class:"form-control mb-3" }}
+
+    <small>Project Source Link</small>
+    {{ form.source_link|add_class:"form-control mb-3" }}
+
+    <small>Insecticides COmponents Tags</small>
+    {{ form.tags|add_class:"form-control mb-3" }}
+
+
+    <input class="btn btn-success" type="submit" />
+  </form>
+</div>
+{% endblock %}
