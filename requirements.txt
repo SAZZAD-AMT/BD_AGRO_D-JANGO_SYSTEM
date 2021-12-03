@@ -1,5 +1,15 @@
 asgiref==3.4.1
-Django==3.2.9
+autopep8==1.6.0
+backports.entry-points-selectable==1.1.0
+distlib==0.3.3
+Django==3.0.14
+filelock==3.3.2
+numpy==1.21.4
 Pillow==8.4.0
+platformdirs==2.4.0
+pycodestyle==2.8.0
 pytz==2021.3
+six==1.16.0
 sqlparse==0.4.2
+toml==0.10.2
+virtualenv==20.10.0
