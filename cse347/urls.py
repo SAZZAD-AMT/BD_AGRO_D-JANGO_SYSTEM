@@ -9,9 +9,6 @@ urlpatterns = [
     path('blog/',  include('blog.urls')),
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
-    path('projects/', include('bdagro.urls')),
-
-    #path('projects/', views.projects, name='projects'),
-    #path('project/<str:pk>/', views.project, name='project'),
-    #path('create-project/', views.createproject, name='create-project'),
+    path('statistic/', include('statistic.urls')),
+    path('home/', include('bdagro.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
