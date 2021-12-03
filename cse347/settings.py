@@ -26,12 +26,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #'bdagro.apps.bdagroConfig',
     
     
     'bdagro',
     'user',
     'blog',
     'statistic',
+
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

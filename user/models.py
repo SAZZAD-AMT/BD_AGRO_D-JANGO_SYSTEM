@@ -23,6 +23,7 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(username, first_name, last_name, phone, password, **other_fields)
 
 
+# This is user model
 class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=15, blank=True, null=True)
     last_name = models.CharField(max_length=15, blank=True, null=True)
