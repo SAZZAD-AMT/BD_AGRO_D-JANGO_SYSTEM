@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #'bdagro.apps.bdagroConfig',
     
     
     'bdagro',
@@ -33,8 +34,7 @@ INSTALLED_APPS = [
     'blog',
     'wings_app',
     'info_app',
-
-
+    'statistic',
 
     'widget_tweaks',
 ]

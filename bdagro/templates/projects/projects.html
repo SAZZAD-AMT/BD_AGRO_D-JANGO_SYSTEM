@@ -1,27 +1,38 @@
-{% extends 'main.html'%}
+{% extends 'base.html'%} {% block content %}
 
-{% block content %}
+<br />
+<div class="container">
+  <div class="row">
+    <div class="text-center">
+      <div class="bg-info p-4" style="--bs-bg-opacity: .5;">Welcome to Our Insecticides Information Page</div> 
+      <a class="btn btn-primary" href="{% url 'create-project' %}">Add Project</a>
 
-<h1>Projects </h1>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Project</th>
-        <th>Positive Votes</th>
-        <th>Votes</th>
-        
-    </tr>
-    {% for project in projects %}
-    <tr>
-            <td>{{project.id}}</td>
-            <td>{{project.title}}</td>
-            <td>{{project.vote_total}}</td>
-            <td>{{project.vote_ratio}}% </td>
-            <td>{{project.created}}</td>
-            <td><a href="{% url 'project' project.id %}">View</a> </td>
-    </tr> 
+      <h1>Insecticides Lists</h1>
+      <table class="table table-striped" border="1">
+        <tr>
+          <th scope="col">Project</th>
+          <th scope="col">Positive Votes</th>
+          <th scope="col">Votes</th>
+          <th scope="col">Create On</th>
+          <th scope="col">Actions</th>
+        </tr>
+        {% for project in projects %}
+        <tr>
 
+          <td class="table-primary">{{project.title}}</td>
+          <td class="table-primary">{{project.vote_total}}</td>
+          <td class="table-primary">{{project.vote_ratio}}%</td>
+          <td class="table-primary">{{project.created}}</td>
+          <td class="table-primary"><a href="{% url 'update-project' project.id %}">Edit</a></td>
+          <td class="table-primary"><a href="{% url 'delete-project' project.id %}">Delete</a></td>
+          <td class="table-primary"><a href="{% url 'project' project.id %}">View</a></td>
+        </tr>
 
-    {% endfor %}
-</table>
-{% endblock content %}
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</div>
+<hr />
+
+{% endblock %}
