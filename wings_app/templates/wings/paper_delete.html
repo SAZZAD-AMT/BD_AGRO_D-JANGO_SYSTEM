@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Do you want delete <a href="{% url 'paper_details' paper.id %}">{{ paper.title }}</a> ?</h4>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <form method="post">
+                        {% csrf_token %}
+                        <button class="btn btn-danger text-center" type="submit">
+                            <i class="fa fa-trash"></i>
+                            <span>Delete</span>
+                        </button>
+                        <a href="{% url 'paper_details' paper.id %}" class="btn btn-secondary">
+                            <i class="fas fa-remove"></i>
+                            <span>Cancel</span>
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

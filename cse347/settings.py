@@ -32,6 +32,8 @@ INSTALLED_APPS = [
     'bdagro',
     'user',
     'blog',
+    'wings_app',
+    'info_app',
     'statistic',
 
     'widget_tweaks',

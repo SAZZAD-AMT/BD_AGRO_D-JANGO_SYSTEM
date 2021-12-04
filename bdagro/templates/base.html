@@ -23,50 +23,32 @@
 
 
     <header>
-        <div class=" main ">
-            <div class="logo ">
-                <a href="{% url 'home' %}"><img src="{% static './img/logo.jpg'%} "></a>
-
-            </div>
-            <nav>
-                <ul>
-                    <li class=" ">
-                        <a href="{% url 'home' %}">BD AGRO</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'statistic' %}">STATISTIC</a>
-                        <div class="dropdown">
-                            <ul>
-                                <li>
-                                    <a href="#">Fertilizer</a>
-                                </li>
-                                <li>
-                                    <a href="#">Seeds</a>
-                                </li>
-                                <li>
-                                    <a href="#">Irrigation</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="# ">AGRICULTURAL INPUT</a>
-                    </li>
-                    <li>
-                        <a href="# ">MARKETING</a>
-                    </li>
-                    <li>
-                        <a href="# ">WINGS OF AGRICULTURE</a>
-                    </li>
-                    <li>
-                        <a href="{% url 'blog' %} ">FARMERS DOCTOR</a>
-                    </li>
-                    <li>
-                        <a href="# ">AGRO INFO</a>
-                    </li>
-                    <!-- <li>
-                        <a href="# ">ABOUT US</a>
-                    </li> -->
+      <div class=" main ">
+        <div class="logo ">
+          <img src="{% static './img/logo.jpg'%} ">
+        </div>
+        <ul>
+          <li class=" ">
+            <a href="# ">BD AGRO</a>
+          </li>
+          <li>
+            <a href="# ">STATISTIC</a>
+          </li>
+          <li>
+            <a href="# ">AGRICULTURAL INPUT</a>
+          </li>
+          <li>
+            <a href="# ">MARKETING</a>
+          </li>
+          <li>
+            <a href="{% url 'wings_home' %}">WINGS OF AGRICULTURE</a>
+          </li>
+          <li>
+            <a href="{% url 'blog' %}">FARMERS DOCTOR</a>
+          </li>
+          <li>
+            <a href="{% url 'info_home' %}">AGRO INFO</a>
+          </li>
                     {% if request.user.is_authenticated %}
                     <li>
                         <a href="# ">PROFILE</a>
