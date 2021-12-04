@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h1 class="m-3">Wings of Agriculture</h1>
+                <hr />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            {% for paper in papers %}
+            <div class="col-lg-12 col-md-12 mb-5">
+                <div class="blog-item">
+                    <div class="blog-thumb">
+                        <a href="{% url 'paper_details' paper.id %}">
+                            <img src="{{ paper.image.url }}" alt="{{ paper.title }}" class="img-fluid">
+                        </a>
+                    </div>
+
+                    <div class="blog-item-content">
+                        <div class="blog-item-meta mb-3 mt-4">
+                            <span class="text-black text-capitalize mr-3">
+                                <i class="icofont-calendar mr-1"></i> {{ article.article_date_posted|date:"d N Y" }}
+                            </span>
+
+                            <p>
+                                Author: 
+                                <a href="#" class="text-capitalize mr-3">
+                                    <b>{{ paper.author.first_name }} {{ paper.author.last_name }}</b>
+                                </a>
+                            </p>
+                        </div>
+
+                        <h2 class="mt-3 mb-3">
+                            <a href="{% url 'paper_details' paper.id %}">
+                                {{ paper.title }}
+                            </a>
+                        </h2>
+
+                        <p class="mb-4">{{ paper.content|truncatechars:250 }}</p>
+
+                        <a href="{% url 'paper_details' paper.id %}" class="btn btn-info">
+                            Read More <i class="icofont-simple-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-4">
+            <div class="text-center">
+                <a href="{% url 'paper_post' %}" class="btn btn-primary m-3">
+                    <span> Post a New Paper</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -30,7 +30,13 @@ INSTALLED_APPS = [
     
     'bdagro',
     'user',
-    'blog'
+    'blog',
+    'wings_app',
+    'info_app',
+
+
+
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

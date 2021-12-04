@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h1 class="m-3">Agriculture News</h1>
+                <hr />
+            </div>
+
+            <div class="container py-2 mb-5">
+                <div class="text-center m-3">
+                    <a href="#">
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid"
+                            style="max-width: 100%; height: 300px;" />
+                    </a>
+                </div>
+                <h2 class="my-2">
+                    {{ post.title }}
+                </h2>
+                <p class="text-sm text-muted">Posted on: {{ post.posted_on|date:"d N Y" }}</p>
+                <hr />
+                <p class="lead mb-4">{{ post.content|linebreaks }}</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

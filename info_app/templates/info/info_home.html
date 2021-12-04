@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h1 class="m-3">Agriculture News</h1>
+                <hr />
+            </div>
+            {% for post in posts %}
+            <div class="container py-2">
+                <div class="text-center">
+                    <a href="{% url 'info_details' post.id %}">
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid"
+                            style="max-width: 100%; height: 300px;" />
+                    </a>
+                </div>
+                <h2 class="my-2">
+                    <a href="{% url 'info_details' post.id %}">
+                        {{ post.title }}
+                    </a>
+                </h2>
+                <p class="text-sm text-muted">Posted on: {{ post.posted_on|date:"d N Y" }}</p>
+            </div>
+            <hr/>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
