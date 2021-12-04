@@ -16,7 +16,7 @@ def signup_view(request):
     user = authenticate(username=username, password=password)
     # login(request, user)
     return redirect('login')
-  return render(request, 'signup.html', {'form': form})
+  return render(request, 'user/signup.html', {'form': form})
 
 
 @unauthenticated_user
@@ -31,7 +31,7 @@ def login_view(request):
       return redirect('blog')
   else:
     form = AuthenticationForm()
-  return render(request, 'login.html',  {'form': form})
+  return render(request, 'user/login.html',  {'form': form})
 
 
 def logout_view(request):

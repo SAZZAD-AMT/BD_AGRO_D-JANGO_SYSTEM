@@ -40,27 +40,6 @@ ul li.active a {
   color: #000;
 }
 
-.dropdown {
-    display: none;
-    border: 1px solid transparent;
-    transition: 1.6s ease;
-    text-decoration: none;
-}
-
-ul li:hover .dropdown {
-    display: block;
-    background-color: rgb(161, 132, 35);
-    margin-left: 1px;
-    position: absolute;
-    border: 1px solid transparent;
-    transition: 1.6s ease;
-    text-decoration: none;
-}
-
-ul li:hover .dropdown ul li {
-    display: block;
-}
-
 #bg {
   background-repeat: no-repeat;
   height: 100vh;

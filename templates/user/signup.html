@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block content %}
+
+<div class="container" style="max-width: 500px">
+  <h2 class="text-center font-weight-bold text-primary">BD AGRO <br/>Sign Up</h2>
+  <div class="card p-3 my-3 border-primary">
+    <form method="post">
+      {% csrf_token %}
+      <div class="row mb-3">
+        <div class="col">
+          <label for="first_name" class="form-label">First Name</label>
+          {{form.first_name|add_class:'form-control form-control-sm'}}
+        </div>
+        <div class="col">
+          <label for="last_name" class="form-label">Last Name</label>
+          {{form.last_name|add_class:'form-control form-control-sm'}}
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="username" class="form-label">Username</label>
+          {{form.username|add_class:'form-control form-control-sm'}}
+          {% for error in form.username.errors %}
+          <small style="color: red">{{ error }}</small>
+          {% endfor %}
+        </div>
+        <div class="col-md-6">
+          <label for="phone" class="form-label">Phone Number</label>
+          {{form.phone|add_class:'form-control form-control-sm'}}
+          {% for error in form.phone.errors %}
+          <small style="color: red">{{ error }}</small>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="form-check form-switch mb-3">
+        <label class="form-check-label" for="flexSwitchCheckChecked"
+          >I'm an expart</label
+        >
+        {{form.is_expart|add_class:'form-check-input'}}
+      </div>
+      <div class="row mb-3">
+        <div class="col-12">
+          <label for="address" class="form-label">Address</label>
+          {{form.address|add_class:'form-control form-control-sm'}}
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="password1" class="form-label">Password</label>
+          {{form.password1|add_class:'form-control form-control-sm'}}
+          {% for error in form.password1.errors %}
+          <small style="color: red">{{ error }}</small>
+          {% endfor %}
+        </div>
+        <div class="col-md-6">
+          <label for="password2" class="form-label">Confirm Password</label>
+          {{form.password2|add_class:'form-control form-control-sm'}}
+          {% for  error in form.password2.errors %}
+          <small style="color: red">{{ error }}</small>
+          {% endfor %}
+        </div>
+      </div>
+
+      <button class="btn btn-primary w-100" type="submit">Sign up</button>
+    </form>
+    <p class="text-center">
+      Already have an account? <a href="{% url 'login'%}">Login</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}

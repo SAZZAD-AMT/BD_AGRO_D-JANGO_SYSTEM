@@ -26,15 +26,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'bdagro.apps.bdagroConfig',
     
     
     'bdagro',
     'user',
     'blog',
     'wings_app',
-    'info_app',
-    'statistic',
+    "info_app",
+    "statistic",
 
     'widget_tweaks',
 ]
@@ -54,7 +53,7 @@ ROOT_URLCONF = 'cse347.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

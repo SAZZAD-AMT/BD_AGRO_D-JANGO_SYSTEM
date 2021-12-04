@@ -10,15 +10,21 @@ def home(request):
     return render(request, "home.html")
 
 
+def agricultural(request):
+    projects = Project.objects.all()
+    context = {"Agricultural": projects}
+    return render(request, "bdagro/agricultural.html", context)
+
+
 def projects(request):
     projects = Project.objects.all()
     context = {"projects": projects}
-    return render(request, "projects/projects.html", context)
+    return render(request, "bdagro/projects.html", context)
 
 
 def project(request, pk):
     projectObj = Project.objects.get(id=pk)
-    return render(request, "projects/single-project.html", {"project": projectObj})
+    return render(request, "bdagro/single-project.html", {"project": projectObj})
 
 
 def createProject(request):
@@ -30,7 +36,7 @@ def createProject(request):
             return redirect("projects")
 
     context = {"form": form}
-    return render(request, "projects/project_form.html", context)
+    return render(request, "bdagro/project_form.html", context)
 
 
 def updateProject(request, pk):
@@ -44,7 +50,7 @@ def updateProject(request, pk):
             return redirect("projects")
 
     context = {"form": form}
-    return render(request, "projects/project_form.html", context)
+    return render(request, "bdagro/project_form.html", context)
 
 
 def deleteProject(request, pk):
@@ -54,4 +60,4 @@ def deleteProject(request, pk):
         return redirect("projects")
 
     context = {"object": project}
-    return render(request, "projects/delete_template.html", context)
+    return render(request, "bdagro/delete_template.html", context)
