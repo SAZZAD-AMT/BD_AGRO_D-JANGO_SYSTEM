@@ -16,6 +16,10 @@ def agricultural(request):
     return render(request, "bdagro/agricultural.html", context)
 
 
+def morefertilizer(request):
+    return render(request, "bdagro/morefertilizer.html")
+
+
 def projects(request):
     projects = Project.objects.all()
     context = {"projects": projects}
