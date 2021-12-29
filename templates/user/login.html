@@ -2,21 +2,21 @@
 {% block content %}
 
 <div class="container" style="max-width: 500px">
-  <h2 class="text-center font-weight-bold text-primary mt-5">BD AGRO <br/>Login</h2>
+  <h2 class="text-center font-weight-bold text-primary mt-5">BD AGRO <br />Login</h2>
   <div class="card p-4 border-primary">
     <form method="post">
       {% csrf_token %}
 
       <div class="form-floating mb-3">
         {{form.username|add_class:'form-control'}}
-		{% for error in form.username.errors %}
+        {% for error in form.username.errors %}
         <small style="color: red">{{ error }}</small>
         {% endfor %}
         <label for="floatingInput">Username</label>
       </div>
       <div class="form-floating mb-3">
         {{form.password|add_class:'form-control'}}
-		{% for error in  form.password.errors %}
+        {% for error in form.password.errors %}
         <small style="color: red">{{ error }}</small>
         {% endfor %}
         <label for="floatingPassword">Password</label>

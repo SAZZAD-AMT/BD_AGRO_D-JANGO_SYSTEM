@@ -13,8 +13,7 @@ def signup_view(request):
     form.save()
     username = form.cleaned_data.get('username')
     password = form.cleaned_data.get('password1')
-    user = authenticate(username=username, password=password)
-    # login(request, user)
+    authenticate(username=username, password=password)
     return redirect('login')
   return render(request, 'user/signup.html', {'form': form})
 
@@ -28,7 +27,7 @@ def login_view(request):
       password = form.cleaned_data.get('password')
       user = authenticate(username=username, password=password)
       login(request, user)
-      return redirect('blog')
+      return redirect('home')
   else:
     form = AuthenticationForm()
   return render(request, 'user/login.html',  {'form': form})
@@ -38,3 +37,11 @@ def logout_view(request):
     logout(request)
     return redirect('home')
 
+  
+def profile_view(request):
+      context = {}
+      return render(request, "user/profile.html", context)
+
+def profile_update_view(request):
+      context = {}
+      return render(request, "user/profile_update.html", context)

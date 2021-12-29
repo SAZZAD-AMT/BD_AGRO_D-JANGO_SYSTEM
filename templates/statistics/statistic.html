@@ -1,154 +1,141 @@
- {% load static %} 
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %} {% load static %} {% block content %}
+<style>
+    .dropbtn {
+        background-color: #3498DB;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .dropbtn:hover,
+    .dropbtn:focus {
+        background-color: #2980B9;
+    }
+    
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .dropdown a:hover {
+        background-color: #ddd;
+    }
+    
+    .show {
+        display: block;
+    }
+</style>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>statistic</title>
-    <script src="https://kit.fontawesome.com/42deadbeef.js">
-    </script>
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h2>Implementation of the Global Strategy in Bangladesh </h2>
+                <h4>Yearly Statistics of Agriculture</h4>
+                <p>SELLECT YEAR TO GET STATIC : </p>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        .dropbtn {
-            background-color: #3498DB;
-            color: white;
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .dropbtn:hover,
-        .dropbtn:focus {
-            background-color: #2980B9;
-        }
-        
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            overflow: auto;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-        
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        
-        .dropdown a:hover {
-            background-color: #ddd;
-        }
-        
-        .show {
-            display: block;
-        }
-    </style>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Select Year</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="{% url 'k18' %}">Till The Last(2020)</a>
 
-</head>
-
-
-<body>
-
-
-    <div class="csc-header csc-header-n3" style="background-color: rgb(173, 85, 85); transform: translate(0%, 20%);   ">
-
-        <h3 style="background-color: brown; color: aliceblue;">Implementation of the Global Strategy in Bangladesh</h3>
-        <div style="border: #2980B9; background-color: aqua;">
-
-            <h2>Yearly Statistics of Agriculture</h2>
-            <p>SELLECT YEAR TO GET STATIC : </p>
-
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="{% url 'k18' %}">2018</a>
-                    <a href="#about">2019</a>
-                    <a href="#contact">2020</a>
+                        <a href="{% url 'up21' %}">Upcoming 2021</a>
+                    </div>
                 </div>
             </div>
-
-            <script>
-                /* When the user clicks on the button, 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            toggle between hiding and showing the dropdown content */
-                function myFunction() {
-                    document.getElementById("myDropdown").classList.toggle("show");
-                }
-
-                // Close the dropdown if the user clicks outside of it
-                window.onclick = function(event) {
-                    if (!event.target.matches('.dropbtn')) {
-                        var dropdowns = document.getElementsByClassName("dropdown-content");
-                        var i;
-                        for (i = 0; i < dropdowns.length; i++) {
-                            var openDropdown = dropdowns[i];
-                            if (openDropdown.classList.contains('show')) {
-                                openDropdown.classList.remove('show');
-                            }
-                        }
-                    }
-                }
-            </script>
         </div>
-
-        <p class="bodytext" style="background-color: rgb(236, 236, 236); font-size: x-large;"><b>Bangladesh</b>
-        </p>
-        <p class="bodytext">48.4% employed in agriculture
-        </p>
-        <p class="bodytext">70.1% land area devoted to agriculture
-        </p>
-        <p class="bodytext">17.5% share of agriculture in GDP
-        </p>
-        <p class="bodytext" style="background-color: rgb(236, 236, 236); font-size: x-large;"><b>Challenges</b>
-        </p>
-        <p class="bodytext">Close to 50 percent of Bangladesh's population is primarily employed in agriculture, with more than 70 percent of its land dedicated to growing crops. Major crops cultivated include rice, jute, wheat, tea, pulses, oil-seeds, vegetables and fruits.
-            Yet despite agriculture contributing to such a large percentage of Bangladesh's overall economy, it has remained largely subsistence based, with uncertain crop yields and inefficient infrastructure limiting the ability of farmers to fully
-            commercialize their production. Recognizing this environment, an In-depth Country Assessment, conducted as part of the Global Strategy to Improve Agricultural and Rural Statistics, concluded that the Bangladesh Bureau of Statistics needs to
-            improve internal and external coordination with statistics producers and users. A plan focused specifically on agriculture is needed to complement and supplement national strategies for the development of statistics. Data gaps in several core
-            areas already being studied such as food balance sheets, livestock and agri-environmental indicators need to be filled to produce more effective statistics and enable more informed responses to these issues. Amongst those tasked with using
-            and analyzing statistics, knowledge and skills need to be further developed.
-        </p>
-        <p class="bodytext" style="background-color: rgb(236, 236, 236); font-size: x-large;"> <b>Current Work</b>
-        </p>
-        <p class="bodytext">The Global Strategy in Asia Pacific has proposed meeting agricultural and rural statistics needs in Bangladesh through the following actions.
-        </p>
-        <p class="bodytext">· Develop a Strategic Plan for Agricultural and Rural Statistics (SPARS)
-        </p>
-        <p class="bodytext">· Strengthen the agricultural crop estimation system
-        </p>
-        <p class="bodytext">· Develop an Integrated framework of census and surveys
-        </p>
-        <p class="bodytext">· Strengthen analytical capacity of institutions· Strengthen coordination, documentation, research and analysis in national statistics systems
-        </p>
-        <p class="bodytext">· Improve application of information and communications technology in production and dissemination of statistics
-        </p>
-        <p class="bodytext">· Improve knowledge and skills of statistics researchers and users· Focus on statistic users' advocacy.
-        </p>
-        <p class="bodytext" style="background-color: rgb(236, 236, 236); "><b>Achievements</b>
-        </p>
-        <p class="bodytext">Strengthened coordination mechanisms and institutional relationships have resulted in the Bangladesh government preparing and adopting a strategy paper to improve agriculture and rural statistics. A survey calendar and integrated plan for surveys
-            has also been established. A roadmap for a SPARS has also been completed and endorsed by the government. The roadmap has been integrated into Bangladesh's agricultural sector development plan. The Global Strategy in Asia Pacific is currently
-            collaborating with the government to develop a working SPARS.
-        </p>
-        <p class="bodytext">&nbsp;</p>
-        <p class="bodytext">&nbsp;</p>
-
     </div>
 
 
-</body>
+
+    <p class="bodytext" style="background-color: rgb(236, 236, 236); font-size: x-large;"><b>Bangladesh</b>
+    </p>
+    <p class="bodytext">48.4% employed in agriculture
+    </p>
+    <p class="bodytext">70.1% land area devoted to agriculture
+    </p>
+    <p class="bodytext">17.5% share of agriculture in GDP
+    </p>
 
 
-</html>
+    <p class="bodytext" style="background-color: rgb(236, 236, 236); font-size: x-large;"><b>Challenges</b>
+    </p>
+    <p class="bodytext">Close to 50 percent of Bangladesh's population is primarily employed in agriculture, with more than 70 percent of its land dedicated to growing crops. Major crops cultivated include rice, jute, wheat, tea, pulses, oil-seeds, vegetables and fruits.
+        Yet despite agriculture contributing to such a large percentage of Bangladesh's overall economy, it has remained largely subsistence based, with uncertain crop yields and inefficient infrastructure limiting the ability of farmers to fully commercialize
+        their production. Recognizing this environment, an In-depth Country Assessment, conducted as part of the Global Strategy to Improve Agricultural and Rural Statistics, concluded that the Bangladesh Bureau of Statistics needs to improve internal
+        and external coordination with statistics producers and users. A plan focused specifically on agriculture is needed to complement and supplement national strategies for the development of statistics. Data gaps in several core areas already being
+        studied such as food balance sheets, livestock and agri-environmental indicators need to be filled to produce more effective statistics and enable more informed responses to these issues. Amongst those tasked with using and analyzing statistics,
+        knowledge and skills need to be further developed.
+    </p>
+
+
+    <p class="bodytext" style="background-color: rgb(236, 236, 236); font-size: x-large;"> <b>Current Work</b>
+    </p>
+    <p class="bodytext">The Global Strategy in Asia Pacific has proposed meeting agricultural and rural statistics needs in Bangladesh through the following actions.
+    </p>
+    <p class="bodytext">· Develop a Strategic Plan for Agricultural and Rural Statistics (SPARS)
+    </p>
+    <p class="bodytext">· Strengthen the agricultural crop estimation system
+    </p>
+    <p class="bodytext">· Develop an Integrated framework of census and surveys
+    </p>
+    <p class="bodytext">· Strengthen analytical capacity of institutions· Strengthen coordination, documentation, research and analysis in national statistics systems
+    </p>
+    <p class="bodytext">· Improve application of information and communications technology in production and dissemination of statistics
+    </p>
+    <p class="bodytext">· Improve knowledge and skills of statistics researchers and users· Focus on statistic users' advocacy.
+    </p>
+
+
+    <p class="bodytext" style="background-color: rgb(236, 236, 236); font-size: x-large;"><b>Achievements</b>
+    </p>
+    <p class="bodytext">Strengthened coordination mechanisms and institutional relationships have resulted in the Bangladesh government preparing and adopting a strategy paper to improve agriculture and rural statistics. A survey calendar and integrated plan for surveys
+        has also been established. A roadmap for a SPARS has also been completed and endorsed by the government. The roadmap has been integrated into Bangladesh's agricultural sector development plan. The Global Strategy in Asia Pacific is currently collaborating
+        with the government to develop a working SPARS.
+    </p>
+    <p class="bodytext">&nbsp;</p>
+    <p class="bodytext">&nbsp;</p>
+    <script>
+        /* When the user clicks on the button, 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</div>
+</div>
+
+{% endblock %}

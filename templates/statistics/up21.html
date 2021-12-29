@@ -1,0 +1,226 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<style>
+
+</style>
+
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h2>World Bank increases Bangladesh’s GDP growth forecast </h2>
+
+            </div>
+        </div>
+    </div>
+    <h4 style="background-color: rgb(128, 195, 226);">WB says GDP is expected to grow by 6.4% instead of its previous forecast of 5.1% </h4>
+    <p>Bangladesh's gross domestic product (GDP) is expected to grow by 6.4% in the 2021-22 fiscal year (FY), says the World Bank, revising it up by 1.3 percentage points from its previous forecast. The multilateral lending agency said in June that GDP would
+        grow by 5.1% in the current fiscal. "Bangladesh's growth rates would pick up to 6.4% in the 2021-22 FY as exports and consumption continue to improve. The government, however, has set a 7.2% growth target for the current fiscal year," it said
+        on Thursday in the latest update of the World Bank's South Asia Economic Focus, titled "Shifting Gears: Digitization and Services-Led Development". “The forecast is based on the lower base, meaning that the projection for 2020-21 was also lower.
+        “In the first three months of the current 2021-22 FY, export earnings have increased and the economy is recovering from the loss of the second wave of the pandemic,” said Professor Mustafizur Rahman, distinguished fellow of the Center for Policy
+        Dialogue (CPD).</p>
+    <div id="UpdatePanelChart">
+
+
+        <div id="historical" class="" style="border: solid 1px #f5f5f5">
+            <div id="ctl00_ContentPlaceHolder1_ctl00_ChartUC_tableWithChartChoices">
+
+                <ul class="nav nav-pills" style="background-color: #f5f5f5;border: solid 1px #ddd">
+                    <li>
+                        <a role="menuitem" data-toggle="collapse" data-target="#datesDiv" class="chart-link"><i class="glyphicon glyphicon-calendar"></i></a>
+                    </li>
+
+                    <h4>2021 GDP CHART : </h4>
+
+
+                    <li>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="row" style="width: 400px; padding: 15px;">
+                                    <ul class="list-unstyled col-md-6">
+                                        <li><a class="chart-type" data-type="type=column">Column</a></li>
+                                        <li><a class="chart-type" data-type="type=line">Line</a></li>
+                                        <li><a class="chart-type" data-type="type=area">Area</a></li>
+                                        <li><a class="chart-type" data-type="type=spline">Spline</a></li>
+                                        <li><a class="chart-type" data-type="type=splinearea">Splinearea</a></li>
+
+                                    </ul>
+                                    <ul class="list-unstyled col-md-6">
+                                        <li><a class="chart-type" data-type="trend=2">Trend</a></li>
+                                        <li><a class="chart-type" data-type="average=4">Average(4)</a></li>
+                                        <li><a class="chart-type" data-type="histogram=10">Histogram</a></li>
+                                        <li><a class="chart-type" data-type="ds=1">Variance</a></li>
+                                        <li><a class="chart-type" data-type="mean=1">Mean</a></li>
+                                        <li><a class="chart-type" data-type="max=1">Maximum</a></li>
+                                        <li><a class="chart-type" data-type="min=1">Minimum</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+            <div id="datesDiv" class="collapse" style="padding-top: 5px;">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <input name="ctl00$ContentPlaceHolder1$ctl00$ChartUC$startDate" type="text" value="2011-12-05" id="startDate" class="form-control" style="max-width: 100px;">
+                    </div>
+                    <div class="form-group">
+                        <input name="ctl00$ContentPlaceHolder1$ctl00$ChartUC$endDate" type="text" value="2021-12-05" id="endDate" class="form-control" style="max-width: 100px;">
+                    </div>
+                    <div id="chart-custom-dates" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#datesDiv">Ok</div>
+                </div>
+            </div>
+            <div id="compare" class="collapse">
+                <select id="compare-countries" class="form-control"></select>
+                <select id="compare-indicators" class="form-control" style="display: none"></select>
+            </div>
+            <div id="data" class="panel panel-default collapse">
+                <div class="panel-body">
+                    <div id="ctl00_ContentPlaceHolder1_ctl00_ChartUC_PanelForGuests" style="padding: 15px; text-align: justify;">
+
+
+                        Trading Economics members can view, download and compare data from nearly 200 countries, including more than 20 million economic indicators, exchange rates, government bond yields, stock indexes and commodity prices.
+                        <br>
+                        <br>
+                        <div>
+                            <div class="btn-group">
+                                <a class="btn btn-default" href="https://tradingeconomics.com/analytics/features.aspx" target="_blank">Features</a>
+                                <a class="btn btn-default" href="https://tradingeconomics.com/contact.aspx?subject=data" target="_blank">Questions? <b>Contact us</b></a>
+                                <a class="btn btn-default" href="https://sso.tradingeconomics.com/?returnurl=https://tradingeconomics.com/bangladesh/gdp-growth#data" target="_blank">Already a Member?  <b>Login</b></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="panel-footer">
+                    <div class="btn btn-default" data-toggle="collapse" data-target="#data"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                </div>
+            </div>
+            <!-- API ACCESS PANEL -->
+            <div id="api" class="panel panel-default collapse">
+                <div class="panel-body">
+
+                    The Trading Economics Application Programming Interface (API) provides direct access to our data. It allows API clients to download millions of rows of historical data, to query our real-time economic calendar, subscribe to updates and receive quotes
+                    for currencies, commodities, stocks and bonds.
+                    <br>
+                    <br>
+
+
+                    <div class="btn-group">
+                        <a class="btn btn-default" href="https://tradingeconomics.com/api/" target="_blank">API Features</a>
+                        <a class="btn btn-default" href="https://docs.tradingeconomics.com" target="_blank">Documentation</a>
+                        <a class="btn btn-default" href="https://tradingeconomics.com/contact.aspx?subject=api" target="_blank">Interested? <b>Click here to contact us</b></a>
+                    </div>
+
+                </div>
+                <div class="panel-footer">
+                    <div class="btn btn-default" data-toggle="collapse" data-target="#data"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                </div>
+            </div>
+            <div id="UpdatePanelforEmbed" class="panel panel-default collapse">
+
+                <div class="panel-heading bold">Please Paste this Code in your Website</div>
+                <div class="panel-body">
+                    <textarea name="ctl00$ContentPlaceHolder1$ctl00$ChartUC$TextBoxEmbed" rows="5" cols="90" id="TextBoxEmbed">&lt;iframe src='https://tradingeconomics.com/embed/?s=bangladeshgdpyoy&amp;v=202108191613v20200908&amp;h=300&amp;w=600&amp;ref=/bangladesh/gdp-growth' height='300' width='600'  frameborder='0' scrolling='no'&gt;&lt;/iframe&gt;&lt;br /&gt;source: &lt;a href='https://tradingeconomics.com/bangladesh/gdp-growth'&gt;tradingeconomics.com&lt;/a&gt;</textarea>
+                    <div class="row input-group input-group-sm">
+                        <div class="col-md-3 col-sm-4">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-addon">width</span>
+                                <input id="TextBoxWidth" value="600" type="text" class="form-control" placeholder="700">
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-addon">height</span>
+                                <input id="TextBoxHeight" value="300" type="text" class="form-control" placeholder="300">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="https://d3fy651gv2fhd3.cloudfront.net/charts/bangladesh-gdp-growth.png?s=bangladeshgdpyoy&amp;v=202108191613V20200908" id="embedPreviewLink" class="btn btn-default btn-sm" target="_blank">
+                                <i class="glyphicon glyphicon-search"></i>&nbsp;Preview
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="btn btn-default" data-toggle="collapse" data-target="#UpdatePanelforEmbed"><i class="glyphicon glyphicon-chevron-up"></i></div>
+                </div>
+
+            </div>
+
+            <figure class="chart-figure">
+                <img id="ImageChart" srcset="https://d3fy651gv2fhd3.cloudfront.net/charts/bangladesh-gdp-growth.png?s=bangladeshgdpyoy&amp;v=202108191613V20200908 1x, https://d3fy651gv2fhd3.cloudfront.net/charts/bangladesh-gdp-growth@2x.png?s=bangladeshgdpyoy&amp;v=202108191613V20200908 2x"
+                    src="https://d3fy651gv2fhd3.cloudfront.net/charts/bangladesh-gdp-growth.png?s=bangladeshgdpyoy&amp;v=202108191613V20200908" alt="Bangladesh GDP Growth Rate" style="color:White;">
+            </figure>
+
+        </div>
+
+    </div>
+    <div id="ctl00_ContentPlaceHolder1_ctl00_ctl00_Panel1">
+
+        <br>
+        <div class="panel panel-default">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Related</th>
+                            <th>Last</th>
+
+                            <th>
+                                Previous</th>
+
+                            <th>Unit</th>
+                            <th>Reference</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="datatable-row">
+                            <td style="padding-left: 10px; text-align: left;">
+                                <a href="/bangladesh/gdp-growth">
+                                        GDP Growth Rate
+                                    </a>
+                            </td>
+                            <td>5.47</td>
+
+                            <td>3.51</td>
+
+                            <td>percent</td>
+                            <td>Dec/21</td>
+                        </tr>
+
+                        <tr class="datatable-row-alternating">
+                            <td style="padding-left: 10px; text-align: left;">
+                                <a href="/bangladesh/gdp-growth-annual">
+                                        GDP Annual Growth Rate
+                                    </a>
+                            </td>
+                            <td>5.47</td>
+
+                            <td>3.51</td>
+
+                            <td>percent</td>
+                            <td>Dec/21</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">
+                <a href="/bangladesh/indicators">
+                    <div class="btn btn-default">
+                        <i class="glyphicon glyphicon-plus"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>{% endblock %}

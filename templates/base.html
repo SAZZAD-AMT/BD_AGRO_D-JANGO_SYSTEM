@@ -45,6 +45,7 @@
                 >BD AGRO</a
               >
             </li>
+            {% if request.user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'statistic' %}">Statistic</a>
             </li>
@@ -59,14 +60,13 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'wings_home' %}">Wings of Agriculture</a>
             </li>
-            {% if request.user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'blog' %}">Farmers Doctor</a>
+              <a class="nav-link" href="{% url 'blog_home' %}">Farmers Doctor</a>
             </li>
-            {% endif %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'info_home' %}">Agro Info</a>
             </li>
+            {% endif %}
           </ul>
 
           {% if request.user.is_authenticated %}
@@ -94,7 +94,7 @@
                         {{ request.user.username }}
                     </a>
                     <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{% url 'profile' %}">
                             <i class="far fa-user me-2"></i>Profile
                         </a>
                         <a class="dropdown-item" href="{% url 'logout' %}">

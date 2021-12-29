@@ -5,7 +5,6 @@ from user.decorators import unauthenticated_user
 from bdagro.forms import ProjectForm
 
 
-@unauthenticated_user
 def home(request):
     return render(request, "home.html")
 

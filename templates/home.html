@@ -11,6 +11,7 @@
          <br/> Welcome to BD AGRO <br/>
     </h1>
 
+    {% if not request.user.is_authenticated %}
     <div class="row mb-5 mt-5">
         <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
 
@@ -34,6 +35,7 @@
                 <i class="fas fa-search me-2"></i>Sign Up</a>
         </div>
     </div>
+    {% endif %}
 </div>
 
 {% endblock %}
