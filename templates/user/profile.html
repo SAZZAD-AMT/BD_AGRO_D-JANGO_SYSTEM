@@ -1,7 +1,32 @@
-{% extends "base.html" %}
-{% load static %}
-{% load widget_tweaks %}
+{% extends "base.html" %} {% load static %}{% load widget_tweaks %}{% block content %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="mb-4 mt-4">
+        <h1 class="h2 text-center" style="font-family:Arial, Helvetica, sans-serif; color: rgb(8, 8, 8);font-weight: bold; font-size: 2rem;font-weight: bold;text-decoration: underline;">Profile</h1>
+    </div>
+
+    <!-- Main Content Here -->
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-3 my-5">
+            <img src="{{user.profile.profile_image.url}}" class="rounded float-right" height="300px" width="300px">
+        </div>
+        <div class="card o-hidden border-0 shadow-lg my-5 col-lg-5">
+            <div class="card-body">
+                <h2>{{user.first_name}} {{user.last_name}}</h2>
+                <p><strong>Username: </strong> {{user.username}} </p>
+                <p><strong>Bio: </strong> {{profile.bio}} </p>
+                <p><strong>Phone Number: </strong> {{profile.phone_number}} </p>
+                <p><strong>Date of Birth: </strong> {{profile.birth_date}} </p>
+                <a href="{% url 'profile_update' %}" class="btn btn-sm btn-primary shadow-sm">Update Profile</a>
+            </div>
+        </div>
+    </div>
 
 
-{% block content %}
+
+</div>
+<!-- /.container-fluid -->
 {% endblock %}
