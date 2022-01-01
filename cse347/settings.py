@@ -78,6 +78,13 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+THIRD_PARTY_APPS = [
+    'crispy_forms',
+    'django_cleanup',
+    'social_django',
+]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 # Password validation

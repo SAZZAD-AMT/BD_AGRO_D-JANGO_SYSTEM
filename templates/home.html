@@ -1,14 +1,18 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "base.html" %} {% load static %} {% load widget_tweaks %} {% block content %}
 
-{% load widget_tweaks %}
-
-{% block content %}
-
-<div class="bg-image p-5 text-center shadow-1-strong rounded text-white"
-     style="background-image: url('{% static './img/1.jpg' %} '); height: 100vh;">
+<div class="bg-image p-5 text-center shadow-1-strong rounded text-black" style="background-image: url('{% static './img/1.jpg' %} '); height: 100vh;background-size: cover; overflow: hidden;">
     <h1 class="font-weight-bold mt-5 mb-5 text-black">
-         <br/> Welcome to BD AGRO <br/>
+        <section id="hero">
+            <div class="hero container">
+                <div style=" text-shadow: 2px 2px; border-color: black; font-weight: bold;text-decoration: underline;text-decoration-color: rgba(136, 255, 0, 0);">
+                    <h1 style="box-shadow: 12px; font-family:Arial, Helvetica, sans-serif;color: rgb(255, 102, 0); font-weight: 700;font-variant: small-caps;font-size: 5rem;">WELCOME <span></span></h1>
+                    <h1 style="box-shadow: 12px; font-family:Arial, Helvetica, sans-serif;color: rgb(255, 255, 255); font-weight: 700;font-variant: small-caps;">TO<span></span></h1>
+                    <h1 style="font-family:Arial, Helvetica, sans-serif; color: rgb(8, 8, 8);font-weight: bold; font-size: 5rem;">BD AGRO <span></span></h1>
+
+                </div>
+            </div>
+        </section>
+
     </h1>
 
     {% if not request.user.is_authenticated %}
@@ -20,8 +24,7 @@
             <p class="text-black">
 
             </p>
-            <a href="{% url 'login' %}"
-               class="btn btn-primary btn-lg btn-block text-center">
+            <a href="{% url 'login' %}" class="btn btn-primary btn-lg btn-block text-center">
                 <i class="fas fa-plus me-2"></i>Login</a>
         </div>
 
@@ -30,8 +33,7 @@
             <p class="text-black">
 
             </p>
-            <a href="{% url 'signup' %}"
-               class="btn btn-primary btn-lg btn-block text-center">
+            <a href="{% url 'signup' %}" class="btn btn-primary btn-lg btn-block text-center">
                 <i class="fas fa-search me-2"></i>Sign Up</a>
         </div>
     </div>

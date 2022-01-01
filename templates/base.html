@@ -1,56 +1,41 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BD AGRO</title>
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    
-  </head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-  <!-- <body id="bg" style="background-image: url('{% static './img/1.jpg' %} ');"> -->
-  <body>
+<!-- <body id="bg" style="background-image: url('{% static './img/1.jpg' %} ');"> -->
+
+<body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}">
-          <img src="{% static './img/logo.jpg'%} " alt="" width="60" height="50" class="d-inline-block align-text-top">
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static './img/logo.jpg'%} " alt="" width="60" height="50" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="{% url 'home' %}"
-                >BD AGRO</a
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">BD AGRO</a
               >
             </li>
             {% if request.user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'statistic' %}">Statistic</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'agricultural_input' %}">Agricultural Input</a
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'agricultural_input' %}">Agricultural Input</a
               >
             </li>
             <li class="nav-item">
@@ -59,77 +44,64 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'wings_home' %}">Wings of Agriculture</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'blog_home' %}">Farmers Doctor</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'info_home' %}">Agro Info</a>
-            </li>
-            {% endif %}
-          </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog_home' %}">Farmers Doctor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'info_home' %}">Agro Info</a>
+                    </li>
+                    {% endif %}
+                </ul>
 
-          {% if request.user.is_authenticated %}
+                {% if request.user.is_authenticated %}
 
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <form method="GET">
-                        <div class="input-group">
-                            <div class="form-outline">
-                                <input class="form-control" type="text" id="id_q" name="q" placeholder='Search'
-                                       {% if search_keyword %}
-                                       value="{{ search_keyword }}"
-                                       {% endif %}>
-                                <label class="form-label text-white">Search</label>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <form method="GET">
+                            <div class="input-group">
+                                <div class="form-outline">
+                                    <input class="form-control" type="text" id="id_q" name="q" placeholder='Search' {% if search_keyword %} value="{{ search_keyword }}" {% endif %}>
+                                    <label class="form-label text-white">Search</label>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </li>
+                        </form>
+                    </li>
 
-                <li class="nav-item dropdown">
-                    <a aria-expanded="false" aria-haspopup="true"
-                       class="nav-link dropdown-toggle btn btn-primary text-white ms-2"
-                       data-bs-toggle="dropdown"
-                       href="#" id="navbarDropdownMenuLink2" role="button">
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle btn btn-primary text-white ms-2" data-bs-toggle="dropdown" href="#" id="navbarDropdownMenuLink2" role="button">
                         {{ request.user.username }}
                     </a>
-                    <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                        <a class="dropdown-item" href="{% url 'profile' %}">
-                            <i class="far fa-user me-2"></i>Profile
-                        </a>
-                        <a class="dropdown-item" href="{% url 'logout' %}">
-                            <i class="fas fa-sign-out-alt me-2"></i>Logout
-                        </a>
-                    </div>
-                </li>
-            </ul>
+                        <div aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
+                            <a class="dropdown-item" href="{% url 'profile' %}">
+                                <i class="far fa-user me-2"></i>Profile
+                            </a>
+                            <a class="dropdown-item" href="{% url 'logout' %}">
+                                <i class="fas fa-sign-out-alt me-2"></i>Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
 
-            {% else %}
+                {% else %}
 
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link btn btn-primary text-white me-2" href="{% url 'login' %}">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-info text-white me-2" href="{% url 'signup' %}">Sign Up</a>
-                </li>
-            </ul>
-            {% endif %}
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white me-2" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-info text-white me-2" href="{% url 'signup' %}">Sign Up</a>
+                    </li>
+                </ul>
+                {% endif %}
+            </div>
         </div>
-      </div>
     </nav>
 
     {% block content %} {% endblock %}
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+
 </html>
