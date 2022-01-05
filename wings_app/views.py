@@ -4,10 +4,15 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from user.models import User
 from wings_app.forms import PaperForm
 from wings_app.models import PaperModel
+from django.db.models import Q
 
 
 def wings_home_view(request):
     papers = PaperModel.objects.order_by('-posted_on')
+    
+    search_keyword = request.GET.get('q') or ''
+    if search_keyword is not None:
+        papers = PaperModel.objects.filter(Q(author__first_name__icontains=search_keyword) | (Q(author__last_name__icontains=search_keyword)|Q(title__icontains=search_keyword)))
     
     is_expart = False
     if request.user.is_authenticated and request.user.is_expart:
@@ -25,6 +30,7 @@ def wings_home_view(request):
     context = {
         'papers': papers,
         'is_expart': is_expart,
+        'search_keyword': search_keyword
     }
     return render(request, 'wings/wings_home.html', context)
 

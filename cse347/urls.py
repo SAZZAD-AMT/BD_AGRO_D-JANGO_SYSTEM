@@ -12,5 +12,5 @@ urlpatterns = [
     path('projects/', include('bdagro.urls')),
     path('statistic/', include('statistic.urls')),
     path('wings/', include('wings_app.urls')),
-    path('news/', include('info_app.urls')),
+    path('news/', include('info_app.urls')), 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

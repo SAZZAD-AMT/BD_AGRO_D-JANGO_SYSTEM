@@ -2,10 +2,18 @@ from django.shortcuts import redirect, render
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from .models import *
 from .forms import *
+from django.http import HttpResponse
+from .models import PostModel,CommentModel
+from django.db.models import Q
+from django.contrib.postgres.search import SearchVector
 
 
 def blog_home_view(request):
     blogs = PostModel.objects.order_by('-posted_on')
+    
+    search_keyword = request.GET.get('q') or ''
+    if search_keyword is not None:
+        blogs = PostModel.objects.filter(Q(author__first_name__icontains=search_keyword) | (Q(author__last_name__icontains=search_keyword) | (Q(title__icontains=search_keyword))))
 
     paginator = Paginator(blogs, 5)
     page = request.GET.get('page', 1)
@@ -17,6 +25,7 @@ def blog_home_view(request):
         blogs = paginator.page(paginator.num_pages)
     context = {
         'blogs': blogs,
+        'search_keyword': search_keyword
     }
     return render(request, 'blog/blog_home.html', context)
 
@@ -103,3 +112,4 @@ def blog_delete_view(request, blog_id):
         'blog': blog,
     }
     return render(request, 'blog/blog_delete.html', context)
+
