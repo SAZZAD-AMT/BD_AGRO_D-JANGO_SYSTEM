@@ -5,6 +5,13 @@
         <div class="col-md-12">
             <div class="text-center">
                 <h1 class="m-3">Farmers' Doctor</h1>
+                
+                <form class="form-inline" method="get">
+                    <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search"
+                    {% if search_keyword %}
+                    value="{{ search_keyword }}"
+                    {% endif %} />
+                  </form>
                 <hr />
             </div>
         </div>

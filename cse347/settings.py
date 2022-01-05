@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'wings_app',
     "info_app",
     "statistic",
-
     'widget_tweaks',
 ]
 

@@ -14,6 +14,8 @@ from django.contrib.auth.models import User
 
 
 
+
+
 @unauthenticated_user
 def signup_view(request):
   form = SignUpForm(request.POST)
@@ -81,3 +83,7 @@ def profile_update_view(request):
     'profile_form': profile_form,
     }
   return render(request, "user/profile_update.html", context)
+
+
+
+   

@@ -1,5 +1,6 @@
-from django.urls import path
+from django.urls import path,include
 from . import views
+
 
 urlpatterns = [
     path('projects/', views.projects, name="projects"),
@@ -9,4 +10,5 @@ urlpatterns = [
     path('delete-project/<str:pk>/', views.deleteProject, name="delete-project"),
     path('agricultural/', views.agricultural, name="agricultural_input"),
     path('agricultural/morefertilizer/', views.morefertilizer, name="morefertilizer"),
+    
 ]
