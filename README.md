@@ -105,12 +105,9 @@ can get the updated news of the current situation.
 # Technologies: HTML, CSS, Bootstrap, Database, Python, Django.
 
 # UML Use Case Diagram:
-```
- 
-```
+<img src="https://github.com/SAZZAD-AMT/BD_AGRO_D-JANGO_SYSTEM/blob/main/static-files/Drawing1.jpg?raw=true">
 # UML Class Diagram:
-```
-```
+
 # Activity Diagram:
  
  
