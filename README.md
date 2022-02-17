@@ -1,4 +1,6 @@
 # BD_AGRO D-JANGO SYSTEM
+<img src="https://github.com/SAZZAD-AMT/BD_AGRO_D-JANGO_SYSTEM/blob/main/static-files/Screenshot%202022-02-17%20235050.png?raw=true">
+
 ```
 TABLE OF CONTENTS
 Topic page
@@ -119,6 +121,7 @@ can get the updated news of the current situation.
 
  
 # GUI of BD AGRO:
+<img src="https://github.com/SAZZAD-AMT/BD_AGRO_D-JANGO_SYSTEM/blob/main/static-files/Screenshot%202022-02-17%20235213.png?raw=true">
 # BD AGRO Home Page :
 ```
  
