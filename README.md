@@ -103,136 +103,42 @@ can get the updated news of the current situation.
 ```
 # User authentication: Since our app deal with sensitive information about the client’s information, a thorough authentication procedure should be followed.
 # Research Feed: If any fresher and user want to post something about there thesis, research paper or anything what related about agriculture they can post from this section.
-
 # Technologies: HTML, CSS, Bootstrap, Database, Python, Django.
-
 # UML Use Case Diagram:
 <img src="https://github.com/SAZZAD-AMT/BD_AGRO_D-JANGO_SYSTEM/blob/main/static-files/Drawing1.jpg?raw=true">
 # UML Class Diagram:
-
 # Activity Diagram:
- 
- 
 # Sequence Diagram:
- 
- 
 # ER diagram:
- 
-
- 
 # GUI of BD AGRO:
 <img src="https://github.com/SAZZAD-AMT/BD_AGRO_D-JANGO_SYSTEM/blob/main/static-files/Screenshot%202022-02-17%20235213.png?raw=true">
 # BD AGRO Home Page :
-```
- 
+``` 
 Login :
- 
-
 Sign Up Page :
- 
 After Login :
- 
-
 STATISTIC Page :
- 
-
- 
-
-
 STATISTIC Till 2020 GDP :
- 
- 
-
 STATISTIC 2021 GDP :
- 
- 
-
 Profile Of User : 
- 
 Update Profile :
- 
-
 ```
-
 AGRO INFO
 Proven Business Strategies is Explained with References 
-
- 
- 
-
-
- 
- 
-
-
- 
- 
 More Fertilizer Info:
-Animated Page Using Hover Effects
- 
-
- 
- 
-
- 
- 
-
-                                                                                Marketing
+Animated Page Using Hover Effects Marketing
 Create Project 
-
- 
- 
-
-
-
-
-
 Edit the Page
- 
-
-
-
 Delete the page 
-
-
-
-
-
-
 View the Created page
- 
 ---
 # WINGS OF AGRICULTURE :
 ```
 
 This is our research page , only an Expert Author can post his/her research on this page.Normal user can only view this page. User can not edit or delete any paper from this page.
-
-
-
-
-
-
-
-
-
-
 User View :
-
- 
- 
-
-
-
-
 Expert view : 
- 
-
-
 Edit page :
- 
-
-
-
 Delete page :
 ```
 ---
@@ -243,27 +149,9 @@ Delete page :
 Here is the feature where a normal user can post his/her crop problem with His/her Name,Location,Phone number as Discription and post His/her problem there.They can edit and Delete the post they have posted. On the posted Blog An Expert can Give his solution by commenting on the Blog post to let the user know the crops problems 
 
 User view :
- 
- 
- 
-
-
-
-
-
-
-
 Edit  and Update Page:
- 
-
-
 Delete Page :
- 
-
-
-
 Expert Comments :
- 
  
 ```
 ---
@@ -273,21 +161,8 @@ Expert Comments :
 Here is the news part of our aplication where users and expert can view news about agriculture from all round the world.No user or Expert can edit any news from this page only admin can post news here and edit and delete post.
 
  view:
- 
- 
-
-
-
-
-
-
 admin page:
- 
-
 edit and delete :
- 
-
-
 ```
 
 ---
@@ -344,7 +219,9 @@ from django.apps import AppConfig
 class BdagroConfig(AppConfig):
     name = 'bdagro'
 ```
+
 ---
+
 ## BD AGRO URLS
 ```
 from django.urls import path,include
@@ -363,8 +240,10 @@ urlpatterns = [
 ]
 ```
 ---
+
 ## BD AGRO VIEWS
 ```
+
 from django.shortcuts import render, redirect
 from bdagro.models import Project
 from django.http import HttpResponse
@@ -433,9 +312,12 @@ def deleteProject(request, pk):
     return render(request, "bdagro/delete_template.html", context)
 
 ```
+
 ---
+
 # BLOG APPS
 ## BLOG ADMIN
+
 ```
 from django.contrib import admin
 from .models import *
@@ -443,7 +325,9 @@ from .models import *
 admin.site.register(PostModel)
 admin.site.register(CommentModel)
 ```
+
 ## blog forms
+
 ```
 from django import forms
 from .models import PostModel, CommentModel
@@ -460,7 +344,9 @@ class CommentForm(forms.ModelForm):
         model = CommentModel
         fields = ("content",)
 ```
+
 ## blog models
+
 ```
 from django.db import models
 from django.shortcuts import reverse
@@ -485,7 +371,9 @@ class CommentModel(models.Model):
     timestamp = models.DateTimeField(auto_now=True)
 
 ```
+
 ## blog views
+
 ```
 from django.shortcuts import redirect, render
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
@@ -603,9 +491,12 @@ def blog_delete_view(request, blog_id):
     return render(request, 'blog/blog_delete.html', context)
 
 ```
+
 ---
+
 # info apps
 views apps
+
 ```
 from django.shortcuts import render
 from info_app.models import InfoModel
@@ -633,10 +524,13 @@ def info_details_view(request, id):
     }
     return render(request, 'info/info_details.html', context)
 ```
+
 ----
 # STATISTIC APPS
 ## URLS
+
 ```
+
 from django.urls import path
 from .views import *
 
@@ -646,11 +540,13 @@ urlpatterns = [
     path("up21/", up21_view, name="up21"),
 ]
 ```
+
 ---
 # Templates have all HTML file and all images in static-file and media file.
 ---
 
 # USERS DECORETOR APPS
+
 ```
 from django.shortcuts import redirect
 
@@ -664,7 +560,9 @@ def unauthenticated_user(view_func):
 
     return wrapper_func
 ```
+
 ## USER MODEL
+
 ```
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
@@ -825,8 +723,10 @@ def profile_update_view(request):
  
 ```
 
+
 ---
 # wings_app
+
 ```
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
@@ -936,12 +836,16 @@ def paper_delete_view(request, paper_id):
     }
     return render(request, 'wings/paper_delete.html', context)
 ```
+
 ---
 # REQUIREMENTS TXT
-```asgiref==3.4.1
+
+```
+asgiref==3.4.1
 Django==3.2.9
 django-widget-tweaks==1.4.9
 Pillow==8.4.0
 pytz==2021.3
 sqlparse==0.4.2
 ```
+
