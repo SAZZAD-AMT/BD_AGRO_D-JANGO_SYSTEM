@@ -14,7 +14,7 @@ Technologies …………………………………………………………�
 UML Use Case Diagram------------------------------------------------------------------7
 UML Class Diagram-----------------------------------------------------------------------8
 ```
----
+
 # Introduction
 ```
 BD Agro System is a service and information providing platform that makes life 
@@ -26,7 +26,7 @@ or list. Furthermore, they can also order fertilizers and insecticides at the ch
 price. This document contains the software requirements specification (SRS) for 
 said app.
 ```
----
+
 # Motivations
 ```
 • The main goal of our app is to give people the opportunity to get services by 
@@ -44,7 +44,7 @@ substance.
 for future. All of that information available will be constantly available 
 through the app’s intuitive UI.
 ```
----
+
 # Challenges
 ```
 • Implementing certain features such as searching and ordering in a webapplication.
@@ -68,7 +68,7 @@ features. However, since IE isn’t very popular with the targeted audience,
 this should be considered a minor hindrance at best.
 • Ensuring strict client security and protecting the client’s data.
 ```
----
+
 # Non-functional Requirements
 ```
 For BD AGRO system types of non-functional requirement 
@@ -124,6 +124,7 @@ Profile Of User :
 Update Profile :
 ```
 AGRO INFO
+```
 Proven Business Strategies is Explained with References 
 More Fertilizer Info:
 Animated Page Using Hover Effects Marketing
@@ -131,8 +132,11 @@ Create Project
 Edit the Page
 Delete the page 
 View the Created page
----
+```
+
+
 # WINGS OF AGRICULTURE :
+
 ```
 
 This is our research page , only an Expert Author can post his/her research on this page.Normal user can only view this page. User can not edit or delete any paper from this page.
@@ -144,6 +148,7 @@ Delete page :
 ---
  
 # Farmer's Doctor
+
 ```
 
 Here is the feature where a normal user can post his/her crop problem with His/her Name,Location,Phone number as Discription and post His/her problem there.They can edit and Delete the post they have posted. On the posted Blog An Expert can Give his solution by commenting on the Blog post to let the user know the crops problems 
@@ -156,6 +161,7 @@ Expert Comments :
 ```
 ---
 # Agriculture News 
+
 ```
 
 Here is the news part of our aplication where users and expert can view news about agriculture from all round the world.No user or Expert can edit any news from this page only admin can post news here and edit and delete post.
@@ -165,11 +171,12 @@ admin page:
 edit and delete :
 ```
 
----
+
 
 # BD_AGRO SYSTEM CODING
 
 ## INSTALLED_APPS
+
 ```
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -189,8 +196,9 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 ```
-----
+
 ## URL of CSE347
+
 
 ```
 from django.contrib import admin
@@ -210,8 +218,10 @@ urlpatterns = [
     path('news/', include('info_app.urls')), 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
----
+
+
 # BD AGRO APPS
+
 ```
 from django.apps import AppConfig
 
@@ -220,9 +230,9 @@ class BdagroConfig(AppConfig):
     name = 'bdagro'
 ```
 
----
 
 ## BD AGRO URLS
+
 ```
 from django.urls import path,include
 from . import views
@@ -239,9 +249,10 @@ urlpatterns = [
     
 ]
 ```
----
+
 
 ## BD AGRO VIEWS
+
 ```
 
 from django.shortcuts import render, redirect
@@ -313,10 +324,11 @@ def deleteProject(request, pk):
 
 ```
 
----
+
 
 # BLOG APPS
 ## BLOG ADMIN
+
 
 ```
 from django.contrib import admin
@@ -492,7 +504,8 @@ def blog_delete_view(request, blog_id):
 
 ```
 
----
+
+
 
 # info apps
 views apps
@@ -525,7 +538,6 @@ def info_details_view(request, id):
     return render(request, 'info/info_details.html', context)
 ```
 
-----
 # STATISTIC APPS
 ## URLS
 
@@ -541,7 +553,6 @@ urlpatterns = [
 ]
 ```
 
----
 # Templates have all HTML file and all images in static-file and media file.
 ---
 
@@ -633,7 +644,9 @@ def create_user_profile(sender, instance, created, **kwargs):
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
 ```
+
 ## USER VIEWS
+
 ```
 from django.shortcuts import render
 from django.contrib.auth import login, authenticate, logout
@@ -724,8 +737,10 @@ def profile_update_view(request):
 ```
 
 
----
+
+
 # wings_app
+
 
 ```
 from django.shortcuts import redirect, render
@@ -837,8 +852,10 @@ def paper_delete_view(request, paper_id):
     return render(request, 'wings/paper_delete.html', context)
 ```
 
----
+
+
 # REQUIREMENTS TXT
+
 
 ```
 asgiref==3.4.1
