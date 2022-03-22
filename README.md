@@ -1,4 +1,4 @@
-# BD_AGRO D-JANGO SYSTEM
+<h1 align="center"> BD_AGRO D-JANGO SYSTEM </h1>
 <img src="https://github.com/SAZZAD-AMT/BD_AGRO_D-JANGO_SYSTEM/blob/main/static-files/Screenshot%202022-02-17%20235050.png?raw=true">
 
 ```
@@ -867,4 +867,4 @@ sqlparse==0.4.2
 ```
 
 ---
-<h1> THANK YOU </h1>
+<h1 align="center"> THANK YOU </h1>
